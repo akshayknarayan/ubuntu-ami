@@ -125,7 +125,19 @@ pub async fn get_latest(
 fn parse_ami(a_tag: &str) -> Option<&str> {
     // example:
     // "<a href=\"https://console.aws.amazon.com/ec2/home?region=us-east-1#launchAmi=ami-085925f297f89fce1\">ami-085925f297f89fce1</a>"
-    let start_idx = a_tag.find('>')?;
-    let end_idx = a_tag.rfind('<')?;
-    Some(&a_tag[start_idx + 1..end_idx])
+    let start_idx = a_tag.find("ami-")?;
+    let end_idx = a_tag[start_idx + 4..].find(|c: char| !c.is_alphanumeric())? + start_idx + 4;
+    Some(&a_tag[start_idx..end_idx])
+}
+
+#[cfg(test)]
+mod test {
+    use super::parse_ami;
+
+    #[test]
+    fn test_ami_parse() {
+        let html = "<a href=\"https://console.aws.amazon.com/ec2/home?region=us-east-1#launchAmi=ami-085925f297f89fce1\">ami-085925f297f89fce1</a>";
+        let ami = parse_ami(html).unwrap();
+        assert_eq!(ami, "ami-085925f297f89fce1");
+    }
 }
