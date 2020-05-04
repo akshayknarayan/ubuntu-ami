@@ -5,7 +5,7 @@ authors = ["Akshay Narayan <akshayn@mit.edu>"]
 edition = "2018"
 
 description = "Scrape cloud-images.ubuntu.com for AMI ids." 
-
+readme = "README.md"
 documentation = "https://docs.rs/ubuntu-ami"
 homepage = "https://github.com/akshayknarayan/ubuntu-ami"
 repository = "https://github.com/akshayknarayan/ubuntu-ami.git"
