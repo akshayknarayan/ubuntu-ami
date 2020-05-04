@@ -6,6 +6,15 @@ edition = "2018"
 
 description = "Scrape cloud-images.ubuntu.com for AMI ids." 
 
+documentation = "https://docs.rs/ubuntu-ami"
+homepage = "https://github.com/akshayknarayan/ubuntu-ami"
+repository = "https://github.com/akshayknarayan/ubuntu-ami.git"
+
+keywords = ["ec2", "aws", "vm"]
+categories = []
+
+license = "MIT OR Apache-2.0"
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
