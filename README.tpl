@@ -1,29 +1,10 @@
-# ubuntu-ami
+# {{crate}}
 
 [![Crates.io](https://img.shields.io/crates/v/ubuntu-ami.svg)](https://crates.io/crates/ubuntu-ami)
 [![Documentation](https://docs.rs/ubuntu-ami/badge.svg)](https://docs.rs/ubuntu-ami/)
 ![Build Status](https://github.com/akshayknarayan/ubuntu-ami/workflows/Rust/badge.svg)
 
-Get your fresh, farm-to-table, single-origin ec2 Ubuntu AMIs.
-
-## Example
-```rust
-use ubuntu_ami::*;
-
-#[tokio::main]
-async fn main() -> Result<(), StdError> {
-    let res = get_latest(
-        "us-east-1",
-        Some("bionic"),
-        None,
-        Some("hvm:ebs-ssd"),
-        Some("amd64"),
-    )
-    .await?;
-    println!("us-east-1 ubuntu:bionic: {}", res);
-    Ok(())
-}
-```
+{{readme}}
 
 ## License
 
